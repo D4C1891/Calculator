@@ -1,1 +1,1 @@
-# Calculator
+This is a simple calculator project made as part of The Odin Project cirriculum, that can handle 4 operations. I used a combination of HTML, CSS, and Javascript to make the project functional. This project was fun to do and ensured that I have understood the foundations of Web development skills.

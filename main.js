@@ -1,12 +1,15 @@
 const numButtons = document.querySelectorAll('.numButtons');
 const operatorButtons = document.querySelectorAll('.operatorButtons');
-const equalButton = document.querySelector('.equals')
+const equalButton = document.querySelector('.equals');
+const decimalButton = document.querySelector('.decimal');
+const clearButton = document.querySelector('.clear');
 let display = document.getElementById('display');
 
 let operand1 = '';
 let operator = '';
 let operand2 = '';
 let displayValue = 0;
+let resultFlag = false;
 
 function getNumberClick(e){
     const num = e.currentTarget.dataset.value;
@@ -28,16 +31,38 @@ numButtons.forEach(button => { button.addEventListener('click', getNumberClick)
 function getOperatorClick(e){
     const op = e.currentTarget.textContent;
     
-    console.log(op);
-
     if(operand1 !== ''){
         operator = op;
     }
 }
 
 operatorButtons.forEach(button => { button.addEventListener('click', getOperatorClick)
-    console.log(operator);
 })
+
+function handleDecimalClick() {
+    if (operator === '') {
+        if (!operand1.includes('.')) {
+            operand1 += '.';
+            displayValue = operand1;
+        }
+    } else {
+        if (!operand2.includes('.')) {
+            operand2 += '.';
+            displayValue = operand2;
+        }
+    }
+    display.value = displayValue;
+}
+
+decimalButton.addEventListener('click', handleDecimalClick );
+
+clearButton.addEventListener('click', () => {
+    operand1 = '';
+    operator = '';
+    operand2 = '';
+    displayValue = '';
+    display.value = displayValue;
+});
 
 function calculate(){
     let result = 0;
@@ -67,11 +92,33 @@ function calculate(){
             return;
     }
     
+    result  = Math.round(result * 10) /10;
     displayValue = result;
     display.value = displayValue;
+    resultFlag = true;
     operand1 = result.toString();
     operator = '';
     operand2 = '';
 }
 
+numButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (resultFlag) {
+            operand1 = '';
+            operand2 = '';
+            operator = '';
+            displayValue = '';
+            resultFlag = false;
+        }
+
+        if(operator === '') {
+            operand1 += button.textContent;
+            displayValue = operand1;
+        }
+        display.value = displayValue;
+    });
+});
+
+
 equalButton.addEventListener('click',calculate);
+
