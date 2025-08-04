@@ -7,25 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Simple Online Calculator</h1>
     <div class = "calculator">
-        <input type="text" id="display" class="calculator-display" disabled>
+        <input type="text" id="display" class="calculatorDisplay" disabled>
         <button class = "clear">CLEAR</button>
-        <button class = "numButtons" data-value = "7">7</button>
-        <button class = "numButtons" data-value = "8">8</button>
-        <button class = "numButtons" data-value = "9">9</button>
-        <button class = "operatorButtons">/</button>
-        <button class = "numButtons" data-value = "4">4</button>
-        <button class = "numButtons" data-value = "5">5</button>
-        <button class = "numButtons" data-value = "6">6</button>
-        <button class = "operatorButtons">*</button>
-        <button class = "numButtons" data-value = "1">1</button>
-        <button class = "numButtons" data-value = "2">2</button>
-        <button class = "numButtons" data-value = "3">3</button>
-        <button class = "operatorButtons">+</button>
-        <button class = "decimal">.</button>
-        <button class = "numButtons" data-value = "0">0</button>
-        <button class = "equals">=</button>
-        <button class = "operatorButtons">-</button>
+        <div class = "buttonContainer">
+            <div class = "numberPad">
+                <button class = "numButtons" data-value = "7">7</button>
+                <button class = "numButtons" data-value = "8">8</button>
+                <button class = "numButtons" data-value = "9">9</button>
+                <button class = "numButtons" data-value = "4">4</button>
+                <button class = "numButtons" data-value = "5">5</button>
+                <button class = "numButtons" data-value = "6">6</button>
+                <button class = "numButtons" data-value = "1">1</button>
+                <button class = "numButtons" data-value = "2">2</button>
+                <button class = "numButtons" data-value = "3">3</button>
+                <button class = "decimal">.</button>
+                <button class = "numButtons" data-value = "0">0</button>
+                <button class = "equals">=</button>
+            </div>
+            
+            <div class = "operators">
+                <button class = "operatorButtons">/</button>
+                <button class = "operatorButtons">*</button>
+                <button class = "operatorButtons">+</button>
+                <button class = "operatorButtons">-</button>
+            </div>
+        </div>
     </div>
 
 <script src = "main.js"></script>

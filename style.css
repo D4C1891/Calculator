@@ -3,8 +3,106 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 75vh;
+    margin: 0;
+    background: white;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h1 {
+    margin: 50px;
+    font-size: 50px;
+    justify-self: flex-start;
 }
 
 .calculator {
     display: flex;
+    flex-direction: column;
+    background-color: #000;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    padding: 16px;
+    margin: 50px;
+}
+
+.calculatorDisplay {
+    background-color: black;
+    color: white;
+    font-size: 32px;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 12px;
+    padding: 8px;
+    border: none;
+    text-align: right;
+}
+
+.clear {
+    background-color: #a5a5a5;
+    color: black;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.numberPad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.numberPad button {
+    flex: 0 0 30%;
+    aspect-ratio: 1 / 1;
+    font-size: 24px;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    width: 25%;
+}
+
+.operatorButtons {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: 24px;
+    background-color: #ff9500;
+    border-radius: 50%;
+}
+
+button {
+    cursor: pointer;
+    background-color: #505050;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.operatorButtons {
+    background-color: #ff9500;
+}
+
+.decimal {
+    background-color: #505050;
+}
+
+.equals {
+    background-color: #505050;
 }
